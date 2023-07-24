@@ -1,0 +1,6 @@
+- name: install docker
+  hosts: server
+  become: true
+  become_method: su
+  roles:
+    - docker

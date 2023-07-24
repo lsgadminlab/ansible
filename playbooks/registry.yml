@@ -1,0 +1,6 @@
+- name: make sure caddy is up to date
+  hosts: registry
+  become: true
+  become_method: su
+  roles:
+    - registry

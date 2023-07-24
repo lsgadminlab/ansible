@@ -1,0 +1,6 @@
+- name: run portainer agent
+  hosts: portainer_agent
+  become: true
+  become_method: su
+  roles:
+    - portainer_agent

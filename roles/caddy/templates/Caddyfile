@@ -1,0 +1,20 @@
+{
+    email lsg.admim@gmail.com
+}
+grafana.lab.lcarilla.de {
+    reverse_proxy 127.0.0.1:3000
+}
+timkausemann.de {
+    reverse_proxy server1:42069
+}
+registry.lab.lcarilla.de {
+    reverse_proxy server1:5000
+    basicauth /* {
+        luis.ternero JDJhJDE0JFpJQXVUZ1daZVZNUmZLbXJXVUVudnVtUndvdTJjd0xOWTRKVmtoQS9JVXVEaElQT2xkR2NP
+        tim.kausemann JDJhJDE0JGdvY2dPNzJQa1djTzVkSVZjZXg2MS5CeWJibWZVYmhBTGx4SUFFSkQuNkxCOVhhTWpKakZx
+        justus.voß JDJhJDE0JHp1VWYuTUxCaVRINmhQZFN5Qk1hV2VEYlVQbWhrYXJjNi85WmhtaFk4T2pmcktPQmN6Ly9t
+    }
+}
+portainer.lab.lcarilla.de {
+    reverse_proxy 127.0.0.1:9000
+}

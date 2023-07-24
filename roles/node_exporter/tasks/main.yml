@@ -1,0 +1,11 @@
+- name: make sure prometheus node exporter is installed
+  apt:
+    pkg:
+      - prometheus-node-exporter
+    state: latest
+    update_cache: true
+- name: Enable + start node exporter
+  ansible.builtin.systemd:
+    name: prometheus-node-exporter
+    state: started
+    enabled: true

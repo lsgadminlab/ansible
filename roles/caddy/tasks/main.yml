@@ -1,0 +1,25 @@
+- name: add caddy apt gpg key
+  get_url:
+    url: https://dl.cloudsmith.io/public/caddy/stable/gpg.key
+    dest: /etc/apt/trusted.gpg.d/caddy-stable.asc
+- name: update caddy sources.list
+  copy:
+    src: templates/caddy.list
+    dest: /etc/apt/sources.list.d/caddy.list
+- name: install caddy
+  apt:
+    name: caddy
+    state: latest
+    update_cache: true
+- name: install rsync
+  apt:
+    name: rsync
+    state: latest
+- name: copy caddyfile
+  copy:
+    src: templates/Caddyfile
+    dest: /etc/caddy/Caddyfile
+- name: restart caddy
+  systemd:
+    name: caddy
+    state: restarted

@@ -1,0 +1,11 @@
+- name: run portainer
+  community.docker.docker_container:
+    name: portainer
+    image: portainer/portainer-ce:alpine
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/portainer:/data
+    restart_policy: always
