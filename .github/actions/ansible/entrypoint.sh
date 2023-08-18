@@ -13,5 +13,6 @@ Host bastion
     Port 22
     IdentityFile /home/harald/Programming/lab/lab-ansible/keys/id_rsa
         " > .ssh/config
-    ansible-playbook -vvv playbooks/caddy.yml
+    cat .ssh/config
+    #ansible-playbook -vvv playbooks/caddy.yml
 EOF
