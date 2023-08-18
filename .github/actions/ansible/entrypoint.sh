@@ -1,4 +1,4 @@
 #!/bin/sh
 ls -la
 pwd
-#ansible-playbook -vvv   playbooks/caddy.yml
+ansible-playbook -vvv   playbooks/caddy.yml
