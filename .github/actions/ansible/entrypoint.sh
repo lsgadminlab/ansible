@@ -1,5 +1,17 @@
 #!/bin/sh
 ls -la
 pwd
-ssh lab@lsglab.ddns.net -i keys/id_rsa -o StrictHostKeyChecking=no "cat /etc/hosts"
-ansible-playbook -vvv playbooks/caddy.yml
+adduser ansible
+cp . /home/ansible
+su ansible << EOF
+    cd
+    mkdir .ssh
+    echo "
+Host bastion
+    HostName lsglab.ddns.net
+    User lab
+    Port 22
+    IdentityFile /home/harald/Programming/lab/lab-ansible/keys/id_rsa
+        " > .ssh/config
+    ansible-playbook -vvv playbooks/caddy.yml
+EOF
