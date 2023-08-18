@@ -12,7 +12,8 @@ Host bastion
     User lab
     Port 22
     IdentityFile /home/ansible/keys/id_rsa
-        " > .ssh/config
+        " > ~/.ssh/config
+    cat /home/ansible/keys/id_rsa
     cat .ssh/config
     ansible-playbook -vvv playbooks/caddy.yml
 EOF
