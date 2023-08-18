@@ -2,7 +2,7 @@
 ls -la
 pwd
 adduser ansible
-cp . /home/ansible
+cp -r . /home/ansible
 su ansible << EOF
     cd
     mkdir .ssh
