@@ -14,5 +14,5 @@ Host bastion
     IdentityFile /github/workspace/keys/id_rsa
         " > .ssh/config
     cat .ssh/config
-    #ansible-playbook -vvv playbooks/caddy.yml
+    ansible-playbook -vvv playbooks/caddy.yml
 EOF
