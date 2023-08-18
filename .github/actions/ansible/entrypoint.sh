@@ -11,7 +11,7 @@ Host bastion
     HostName lsglab.ddns.net
     User lab
     Port 22
-    IdentityFile home/ansible/keys/id_rsa
+    IdentityFile /home/ansible/keys/id_rsa
         " > .ssh/config
     cat .ssh/config
     ansible-playbook -vvv playbooks/caddy.yml
