@@ -7,14 +7,62 @@ grafana.lab.lcarilla.de {
 timkausemann.de {
     reverse_proxy server1:42069
 }
+lcarilla.de {
+    reverse_proxy server1:10293
+}
 registry.lab.lcarilla.de {
     reverse_proxy server1:5000
     basicauth /* {
+        quirin.stetten $2a$12$T9/jJ5guJk0hjdpBYIus/eBagOaXQO15840zfw5kKP..INW41aFWW
         luis.ternero JDJhJDE0JFpJQXVUZ1daZVZNUmZLbXJXVUVudnVtUndvdTJjd0xOWTRKVmtoQS9JVXVEaElQT2xkR2NP
         tim.kausemann JDJhJDE0JGdvY2dPNzJQa1djTzVkSVZjZXg2MS5CeWJibWZVYmhBTGx4SUFFSkQuNkxCOVhhTWpKakZx
         justus.voß JDJhJDE0JHp1VWYuTUxCaVRINmhQZFN5Qk1hV2VEYlVQbWhrYXJjNi85WmhtaFk4T2pmcktPQmN6Ly9t
     }
 }
+argus.lab.lcarilla.de {
+    basicauth /* {
+        argus $2a$12$NLkByjuqLnwNauOoi2vSHeU062NsUwD/vyQ1NhugQgZaxdfkchL2K
+    }
+    reverse_proxy server1:10831
+}
+
+admins.lab.lcarilla.de/api/* {
+    header {
+        Access-Control-Allow-Origin *
+        defer
+    }
+    reverse_proxy server1:10273
+}
+admins.lab.lcarilla.de {
+    reverse_proxy server1:10274
+}
 portainer.lab.lcarilla.de {
     reverse_proxy 127.0.0.1:9000
+}
+id.lab.lcarilla.de {
+    reverse_proxy server2:10231
+}
+todo.lab.lcarilla.de {
+    reverse_proxy server2:10732
+}
+todo.lab.lcarilla.de/api/* {
+    reverse_proxy server2:10733
+}
+todo.lab.lcarilla.de/swagger_ui/* {
+    reverse_proxy server2:10733
+}
+todo.lab.lcarilla.de/v3/* {
+    reverse_proxy server2:10733
+}
+jenkins.lab.lcarilla.de {
+    reverse_proxy server3:8080
+}
+lab.qstetten.de {
+    reverse_proxy server2:10836
+}
+1.redirect.lab.lcarilla.de {
+    redir 2.redirect.lab.lcarilla.de
+}
+2.redirect.lab.lcarilla.de {
+    redir 1.redirect1.lab.lcarilla.de
 }
