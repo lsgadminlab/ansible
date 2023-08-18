@@ -60,9 +60,3 @@ jenkins.lab.lcarilla.de {
 lab.qstetten.de {
     reverse_proxy server2:10836
 }
-1.redirect.lab.lcarilla.de {
-    redir 2.redirect.lab.lcarilla.de
-}
-2.redirect.lab.lcarilla.de {
-    redir 1.redirect1.lab.lcarilla.de
-}
