@@ -1,4 +1,5 @@
 #!/bin/sh
 ls -la
 pwd
-ansible-playbook -vvv   playbooks/caddy.yml
+ping lsglab.ddns.net -c 4
+ansible-playbook -vvv playbooks/caddy.yml
