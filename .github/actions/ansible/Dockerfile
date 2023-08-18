@@ -2,7 +2,7 @@ FROM alpine:latest
 
 ENV ANSIBLE_HOST_KEY_CHECKING=False
 
-RUN apk update && apk add ansible-core rsync openssh
+RUN apk update && apk add ansible-core rsync openssh curl
 
 RUN ansible-galaxy collection install community.docker
 
