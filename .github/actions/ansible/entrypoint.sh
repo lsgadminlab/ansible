@@ -14,6 +14,6 @@ su ansible << EOF
         " > ~/.ssh/config
     cat /home/ansible/keys/id_rsa
     cat .ssh/config
-    ssh lab@bastion -o StrictHostKeyChecking=no "cat /etc/hosts"
+    ssh lab@bastion -o StrictHostKeyChecking=no "echo duh this is actually needed cuz otherwise host key wont be aded bruhf"
     ansible-playbook -vvv playbooks/caddy.yml
 EOF
