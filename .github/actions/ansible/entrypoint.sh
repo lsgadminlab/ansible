@@ -6,8 +6,7 @@ cp -r . /home/ansible
 su ansible << EOF
     cd
     mkdir .ssh
-    echo "
-Host bastion
+    echo "Host bastion
     HostName lsglab.ddns.net
     User lab
     Port 22
