@@ -20,7 +20,11 @@ registry.lab.lcarilla.de {
     }
 }
 etherpad.lab.lcarilla.de {
-    reverse_proxy https://server2:9001
+    reverse_proxy https://server2:9001 {
+                transport http {
+                        tls_insecure_skip_verify
+                }
+        }
 }
 argus.lab.lcarilla.de {
     basicauth /* {
