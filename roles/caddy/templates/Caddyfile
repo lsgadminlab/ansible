@@ -68,5 +68,8 @@ lab.qstetten.de {
     reverse_proxy server2:10836
 }
 hedgedoc.lab.lcarilla.de {
+    basicauth /* {
+        lab $2a$12$tduw98opm2UfX4fnnGUu8umy3z9XFcPbintkdGGt.ZgJT8RAkLub6
+    }
     reverse_proxy server2:10085
 }
