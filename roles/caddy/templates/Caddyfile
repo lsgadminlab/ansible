@@ -67,3 +67,6 @@ jenkins.lab.lcarilla.de {
 lab.qstetten.de {
     reverse_proxy server2:10836
 }
+hedgedoc.lab.lcarilla.de {
+    reverse_proxy server2:10085
+}
