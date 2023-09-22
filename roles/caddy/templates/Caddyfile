@@ -20,7 +20,7 @@ registry.lab.lcarilla.de {
     }
 }
 etherpad.lab.lcarilla.de {
-    reverse_proxy server2:9001
+    reverse_proxy https://server2:9001
 }
 argus.lab.lcarilla.de {
     basicauth /* {
