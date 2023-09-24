@@ -1,6 +1,12 @@
 {
     email lsg.admim@gmail.com
 }
+log graylog {
+	output net server2:12201 {
+        dial_timeout 5
+        soft_start
+    }
+}
 grafana.lab.lcarilla.de {
     reverse_proxy 127.0.0.1:3000
 }
