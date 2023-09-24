@@ -5,7 +5,9 @@
 (log) {
     log {
         output stdout
-        format console
+        format transform `{request>remote_ip}:{request>remote_port}->{request>host}{request>uri} at [{ts}] with Method:{request>method}` {
+            time_format "02/Jan/2006:15:04:05 -0500"
+        }
     }
 }
 
