@@ -88,3 +88,8 @@ graylog.lab.lcarilla.de {
     import log
     reverse_proxy server2:9000
 }
+
+docker.graylog.lab.timkausemann.de {
+    import log
+    reverse_proxy server3:9000 
+}
