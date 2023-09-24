@@ -16,4 +16,5 @@ su ansible << EOF
     cat .ssh/config
     ssh lab@bastion -o StrictHostKeyChecking=no "echo duh this is actually needed cuz otherwise host key wont be aded bruhf"
     ansible-playbook -vvv playbooks/caddy.yml
+    ansible-playbook -vvv playbooks/docker.yml
 EOF

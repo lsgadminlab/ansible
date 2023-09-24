@@ -1,3 +1,7 @@
 {
+    "log-driver": "gelf",
+    "log-opts": {
+          "gelf-address": "tcp://server2:12201"
+    },
     "insecure-registries":["server1:5000"] 
 }
