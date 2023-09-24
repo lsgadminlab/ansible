@@ -73,3 +73,6 @@ hedgedoc.lab.lcarilla.de {
     }
     reverse_proxy server2:10085
 }
+graylog.lab.lcarilla.de {
+    reverse_proxy server2:9000
+}
