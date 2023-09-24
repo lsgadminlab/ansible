@@ -1,32 +1,46 @@
 {
     email lsg.admim@gmail.com
 }
+
+(log) {
+    log {
+        output stdout
+        format console
+    }
+}
+
 grafana.lab.lcarilla.de {
+    import log
     reverse_proxy 127.0.0.1:3000
 }
-timkausemann.de {
-    reverse_proxy server1:42069
-}
+
 lcarilla.de {
+    import log
     reverse_proxy server1:10293
 }
+
 registry.lab.lcarilla.de {
+    import log
     reverse_proxy server1:5000
     basicauth /* {
         quirin.stetten $2a$12$T9/jJ5guJk0hjdpBYIus/eBagOaXQO15840zfw5kKP..INW41aFWW
         luis.ternero JDJhJDE0JFpJQXVUZ1daZVZNUmZLbXJXVUVudnVtUndvdTJjd0xOWTRKVmtoQS9JVXVEaElQT2xkR2NP
         tim.kausemann JDJhJDE0JGdvY2dPNzJQa1djTzVkSVZjZXg2MS5CeWJibWZVYmhBTGx4SUFFSkQuNkxCOVhhTWpKakZx
-        justus.voß JDJhJDE0JHp1VWYuTUxCaVRINmhQZFN5Qk1hV2VEYlVQbWhrYXJjNi85WmhtaFk4T2pmcktPQmN6Ly9t
+        justus.voß JDJhJDE0JHp1VWYuTUxCaVRINmhQZDNnU2l1RlNMc1V3WWZ1Z1MvTTJqV3BzRlh6bWVndVZqUEd2Rz0=
     }
 }
+
 etherpad.lab.lcarilla.de {
+    import log
     reverse_proxy https://server2:9001 {
-                transport http {
-                        tls_insecure_skip_verify
-                }
+        transport http {
+            tls_insecure_skip_verify
         }
+    }
 }
+
 argus.lab.lcarilla.de {
+    import log
     basicauth /* {
         argus $2a$12$NLkByjuqLnwNauOoi2vSHeU062NsUwD/vyQ1NhugQgZaxdfkchL2K
     }
@@ -34,45 +48,43 @@ argus.lab.lcarilla.de {
 }
 
 admins.lab.lcarilla.de/api/* {
+    import log
     header {
         Access-Control-Allow-Origin *
         defer
     }
     reverse_proxy server1:10273
 }
+
 admins.lab.lcarilla.de {
+    import log
     reverse_proxy server1:10274
 }
+
 portainer.lab.lcarilla.de {
+    import log
     reverse_proxy 127.0.0.1:9000
 }
-id.lab.lcarilla.de {
-    reverse_proxy server2:10231
-}
-todo.lab.lcarilla.de {
-    reverse_proxy server2:10732
-}
-todo.lab.lcarilla.de/api/* {
-    reverse_proxy server2:10733
-}
-todo.lab.lcarilla.de/swagger_ui/* {
-    reverse_proxy server2:10733
-}
-todo.lab.lcarilla.de/v3/* {
-    reverse_proxy server2:10733
-}
+
 jenkins.lab.lcarilla.de {
+    import log
     reverse_proxy server3:8080
 }
+
 lab.qstetten.de {
+    import log
     reverse_proxy server2:10836
 }
+
 hedgedoc.lab.lcarilla.de {
+    import log
     basicauth /* {
         lab $2a$12$tduw98opm2UfX4fnnGUu8umy3z9XFcPbintkdGGt.ZgJT8RAkLub6
     }
     reverse_proxy server2:10085
 }
+
 graylog.lab.lcarilla.de {
+    import log
     reverse_proxy server2:9000
 }
