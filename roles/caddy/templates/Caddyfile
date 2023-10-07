@@ -5,9 +5,7 @@
 (log) {
     log {
         output stdout
-        format transform `{request>remote_ip}:{request>remote_port}->{request>host}{request>uri} at [{ts}] with Method:{request>method}` {
-            time_format "02/Jan/2006:15:04:05 -0500"
-        }
+        format json
     }
 }
 
@@ -25,10 +23,11 @@ registry.lab.lcarilla.de {
     import log
     reverse_proxy server1:5000
     basicauth /* {
-        quirin.stetten $2a$12$T9/jJ5guJk0hjdpBYIus/eBagOaXQO15840zfw5kKP..INW41aFWW
-        luis.ternero JDJhJDE0JFpJQXVUZ1daZVZNUmZLbXJXVUVudnVtUndvdTJjd0xOWTRKVmtoQS9JVXVEaElQT2xkR2NP
-        tim.kausemann JDJhJDE0JGdvY2dPNzJQa1djTzVkSVZjZXg2MS5CeWJibWZVYmhBTGx4SUFFSkQuNkxCOVhhTWpKakZx
-        justus.voß JDJhJDE0JHp1VWYuTUxCaVRINmhQZDNnU2l1RlNMc1V3WWZ1Z1MvTTJqV3BzRlh6bWVndVZqUEd2Rz0=
+         quirin.stetten $2a$12$T9/jJ5guJk0hjdpBYIus/eBagOaXQO15840zfw5kKP..INW41aFWW
+         luis.ternero JDJhJDE0JFpJQXVUZ1daZVZNUmZLbXJXVUVudnVtUndvdTJjd0xOWTRKVmtoQS9JVXVEaElQT2xkR2NP
+         tim.kausemann JDJhJDE0JGdvY2dPNzJQa1djTzVkSVZjZXg2MS5CeWJibWZVYmhBTGx4SUFFSkQuNkxCOVhhTWpKakZx
+         justus.voß JDJhJDE0JHp1VWYuTUxCaVRINmhQZDNnU2l1RlNMc1V3WWZ1Z1MvTTJqV3BzRlh6bWVndVZqUEd2Rz0=
+         lab $2a$12$/WmpNIPTZAtnfPRofWp6eOUhMrbI2ZvU3.T2aqkJUP8D45QnbKAh2
     }
 }
 
@@ -93,5 +92,5 @@ graylog.lab.lcarilla.de {
 
 docker.graylog.lab.timkausemann.de {
     import log
-    reverse_proxy server3:9000 
+    reverse_proxy server3:9000
 }
