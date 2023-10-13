@@ -8,7 +8,10 @@
         format json
     }
 }
-
+homeassistant.lab.lcarilla.de {
+    import log
+    reverse_proxy server3:8123
+}
 grafana.lab.lcarilla.de {
     import log
     reverse_proxy 127.0.0.1:3000
